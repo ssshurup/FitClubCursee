@@ -1,0 +1,38 @@
+﻿<Page x:Class="FitClubCurse.Pages.AdminPages.LessonP"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FitClubCurse.Pages.AdminPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="LessonP">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="600"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Name="TolBarGrid">
+            <Grid x:Name="GridButtonsBar" >
+                <StackPanel Grid.Row="1">
+                    <Button x:Name="AddBT" Content="Назначить занятие" Margin="10,5" Click="AddBT_Click"  />
+                    <Button x:Name="DropBT" Content="Удалить" Margin="10,5" Click="DropBT_Click"/>
+                    <Button x:Name="EditBT" Content="Изменить" Margin="10,5" Click="EditBT_Click"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Bottom"  Grid.Row="1">
+                    <Button x:Name="BackBT" Content="Назад" Margin="10,5" Click="BackBT_Click"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
+            <DataGrid x:Name="LessonDG" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Клиент" Binding="{Binding users.name}" Width="200"/>
+                    <DataGridTextColumn Header="Тренер" Binding="{Binding employee.name}" Width="200"/>
+                    <DataGridTextColumn Header="Дата" Binding="{Binding dateLesson}" Width="200"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Page>
